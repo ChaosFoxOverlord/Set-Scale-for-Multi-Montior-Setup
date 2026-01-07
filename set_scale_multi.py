@@ -38,6 +38,19 @@ except dbus.DBusException as e:
 # Get current state from Mutter
 serial, connected_monitors, logical_monitors, properties = interface.GetCurrentState()
 
+# --- AUTO-DISCOVERY BLOCK ---
+# Print available monitor connectors to make configuration easier
+print("Detected monitors:")
+for monitor in connected_monitors:
+    # monitor[0][0] is the connector name (e.g., 'eDP-1')
+    connector = monitor[0][0]
+    # Check if it's currently used in logical_monitors
+    is_active = any(connector in str(l_mon[5]) for l_mon in logical_monitors)
+    status = "Active" if is_active else "Inactive"
+    print(f"  - {connector} ({status})")
+print("-" * 20)
+# ----------------------------
+
 def get_current_mode_id(connector_name):
     """Finds the active mode ID for a given connector name."""
     for monitor in connected_monitors:
