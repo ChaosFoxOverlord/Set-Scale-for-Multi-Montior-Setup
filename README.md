@@ -53,4 +53,4 @@ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffe
 *Note: A logout/login or restart might be required.*
 
 ## Credits
-Based on discussions and snippets from [AskUbuntu](https://askubuntu.com/questions/1035718/) and [strycore's gist](https://gist.github.com/strycore/ca1120357182d4ba48358759).
+Based on discussions and snippets from [AskUbuntu](https://askubuntu.com/questions/1035718/) and [strycore's gist](https://gist.github.com/strycore/ca11203fd63cafcac76d4b04235d8759).
